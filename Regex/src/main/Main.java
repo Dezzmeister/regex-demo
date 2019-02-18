@@ -6,21 +6,22 @@ import java.util.regex.Pattern;
 public class Main {
 
 	public static void main(String[] args) {
-		String regex = "\\d{2,4}";
+		String regex = "(boss|986)+";
 		
 		Pattern pattern = Pattern.compile(regex);
-		String test = "123word45689 986365";
+		String test = "123word456Boss9 boss986boss365";
 		Matcher matcher = pattern.matcher(test);
 		
 		while (matcher.find()) {
 			System.out.println(matcher.group());
 		}
-		
+		/*
 		System.out.println(isValidIP("10.0.0.9"));			//true
 		System.out.println(isValidIP("not a valid IP"));	//false
 		System.out.println(isValidIP("10..0.0.9"));			//false
 		System.out.println(isValidIP("192.168.0.102"));		//true
 		System.out.println(isValidIP("192.168.0.102.100"));	//false
+		*/
 	}
 	
 	static boolean isValidIP(String ip) {
